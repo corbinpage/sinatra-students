@@ -1,23 +1,23 @@
 <h1>Edit <%= @student.name %></h1>
 
-<form action="/students" method="post">
+<form action="/students/<%= @student.slug %>" method="post">
   
   <label for="name">Name</label>
-  <input type="text" name="student[name]" id="name"/><br/>
+  <input type="text" name="student[name]" id="name" value="<%= @student.name %>"/><br/>
   <label for="bio">Bio</label>
-  <input type="text" name="student[bio]" id="bio"/><br/>
+  <input type="text" name="student[bio]" id="bio" value="<%= @student.bio %>"/><br/>
   <label for="profile_image">Profile Image</label>
-  <input type="text" name="student[profile_image]" id="profile_image"/><br/>
+  <input type="text" name="student[profile_image]" id="profile_image" value="<%= @student.profile_image %>"/><br/>
   <label for="background_image">Background Image</label>
-  <input type="text" name="student[background_image]" id="background_image"/><br/>
+  <input type="text" name="student[background_image]" id="background_image" value="<%= @student.background_image %>"/><br/>
   <label for="quote">Quote</label>
-  <input type="text" name="student[quote]" id="quote"/><br/>
+  <input type="text" name="student[quote]" id="quote" value="<%= @student.quote %>"/><br/>
   <label for="work">Work</label>
-  <input type="text" name="student[work]" id="work"/><br/>
+  <input type="text" name="student[work]" id="work" value="<%= @student.work %>"/><br/>
   <label for="work_title">Work Title</label>
-  <input type="text" name="student[work_title]" id="work_title"/><br>
+  <input type="text" name="student[work_title]" id="work_title" value="<%= @student.work_title %>"/><br>
   <label for="education">Education</label>
-  <input type="text" name="student[education]" id="education"/><br>
+  <input type="text" name="student[education]" id="education" value="<%= @student.education %>"/><br>
 
   <input type="submit" value="submit"/>
 </form>

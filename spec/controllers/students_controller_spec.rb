@@ -88,6 +88,22 @@ describe StudentsController do
     end
   end
 
-  context 'POST /students/slug' do
+  context 'POST /students/:slug' do
+    it "updates a student profile" do
+      Student.create({
+        :name => "Thomas Surgent",
+        :bio => "I am awesome",
+        :slug => "thomas-surgent"
+      })
+
+      post '/students/thomas-surgent', {:student => {
+        :name => "Thomas Surgent",
+        :bio => "I am awesomeer",
+        :slug => "thomas-surgent"
+      }}
+
+      @student = Student.find_by(:name => "Thomas Surgent")
+      expect(@student.bio).to eq("I am awesomeer")
+    end
   end
 end

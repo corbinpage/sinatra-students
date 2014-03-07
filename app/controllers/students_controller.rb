@@ -34,6 +34,13 @@ class StudentsController < ApplicationController
     erb :'students/edit'
   end
 
+  post '/students/:slug' do 
+    @student = Student.find_by(:slug => params[:slug])
+    @student.update(params[:student])
+    @student.slug = @student.create_slug
+    @student.save
+    redirect to "/students/#{@student.slug}"
+  end
 
   # GET '/students/new'
   # POST '/students'
