@@ -11,6 +11,10 @@ class StudentsController < ApplicationController
     "Hello World"
   end
 
+  get '/students/new' do
+
+    "students new"
+  end
   # GET '/students/new'
   # POST '/students'
   # GET '/students/avi-flombaum'

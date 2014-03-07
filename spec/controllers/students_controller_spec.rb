@@ -46,9 +46,12 @@ describe StudentsController do
       expect(last_response.body).to include(student.name)
     end
   end
-
   
   context 'GET /students/new' do
+    it "should respond to /students/new" do
+      get '/students/new'
+      expect(last_response).to be_ok
+    end
   end
   
   context 'POST /students' do
