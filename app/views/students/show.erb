@@ -11,4 +11,8 @@
 
 <a href="/students/<%= @student.slug %>/edit">Edit</a><br/>
 
+<form action="/students/<%= @student.slug %>/destroy" method="post">
+  <input type="submit" value="destroy">
+</form>
+
 <a href="/">Back to Students Page</a>

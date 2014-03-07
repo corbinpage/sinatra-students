@@ -106,4 +106,19 @@ describe StudentsController do
       expect(@student.bio).to eq("I am awesomeer")
     end
   end
+
+  context 'DELETE /students/:slug/delete' do 
+    it "deletes a specific student" do
+      @student = Student.create({
+        :name => "Thomas Surgent",
+        :bio => "I am awesome",
+        :slug => "thomas-surgent"
+      })
+      @id = @student.id
+
+      post "/students/#{@student.slug}/delete" 
+
+      expect(Student.find_by(:id => @id)).to eq(nil)
+    end
+  end
 end

@@ -42,6 +42,12 @@ class StudentsController < ApplicationController
     redirect to "/students/#{@student.slug}"
   end
 
+  post '/students/:slug/delete' do
+    @student = Student.find_by(:slug => params[:slug])
+    @student.destroy
+    redirect to '/'
+  end 
+
   # GET '/students/new'
   # POST '/students'
   # GET '/students/avi-flombaum'
