@@ -21,13 +21,9 @@ ActiveRecord::Schema.define(version: 20140307184507) do
     t.string   "work"
     t.string   "work_title"
     t.string   "education"
-    t.string   "twitter"
-    t.string   "linkedin"
-    t.string   "github"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
-
   end
 
 end

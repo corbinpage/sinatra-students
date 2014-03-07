@@ -17,12 +17,14 @@ class StudentsController < ApplicationController
 
   post '/students' do 
     @student = Student.create(params[:student])
+    @student.slug = @student.create_slug
+    @student.save
 
     redirect to "/students/#{@student.slug}"
   end
 
   get "/students/:slug" do
-    @student = Student.find_by(params[:slug])
+    @student = Student.find_by(:slug => params[:slug])
     erb :'students/show'
   end
 
