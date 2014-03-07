@@ -1,7 +1,7 @@
 <h1>Students Index</h1>
 
 <% @students.each do |s| %>
-  <p><%= s.name %></p>
+  <a href="/students/<%=s.slug%>"><%= s.name %></a><br/>
 <% end %>
 
 <a href="/students/new">Create a New Student</a>

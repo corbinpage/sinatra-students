@@ -23,10 +23,15 @@ class StudentsController < ApplicationController
     redirect to "/students/#{@student.slug}"
   end
 
+  ### Show page
   get "/students/:slug" do
     @student = Student.find_by(:slug => params[:slug])
     erb :'students/show'
   end
+
+  # get '/students/avi-flombaum/edit' do
+  #   @student = Student.find_by(:slug => params[:slug])  
+  # end
 
 
   # GET '/students/new'

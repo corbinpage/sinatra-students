@@ -11,7 +11,6 @@ class Student < ActiveRecord::Base
 		self.create_slug
 	end
 
-
 end
 
 

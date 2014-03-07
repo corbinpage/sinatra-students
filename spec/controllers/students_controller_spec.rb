@@ -78,6 +78,7 @@ describe StudentsController do
 
   # This context should only be about testing the edit form.
   context 'GET /students/slug/edit' do
+    
   end
 
   context 'POST /students/slug' do
