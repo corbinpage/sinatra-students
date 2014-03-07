@@ -1,5 +1,4 @@
 class Blog < ActiveRecord::Base
-  @name
-  @link
+  belongs_to :students
 end
 
