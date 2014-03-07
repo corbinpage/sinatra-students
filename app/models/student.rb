@@ -1,8 +1,8 @@
 class Student < ActiveRecord::Base
 
   before_create :create_slug
-  before_create :update_profile_pic_url
-  before_create :update_background_pic_url
+  before_save :update_profile_pic_url
+  before_save :update_background_pic_url
 
 
   def create_slug
