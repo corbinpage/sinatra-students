@@ -175,6 +175,12 @@
   <div class="clear"></div>
   <!-- End Footer Widgets -->
 
+  <form action="/students/<%= @student.slug %>/delete" method="post">
+  <input type="submit" value="destroy">
+</form>
+
+<a href="/">Back to Students Page</a>
+
   <!-- Begin Footer -->
   <div class="footer">
     <div class="footer-text">
@@ -244,11 +250,7 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
-  <form action="/students/<%= @student.slug %>/delete" method="post">
-  <input type="submit" value="destroy">
-</form>
 
-<a href="/">Back to Students Page</a>
 
 </body>
 

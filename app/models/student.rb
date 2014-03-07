@@ -10,7 +10,7 @@ class Student < ActiveRecord::Base
   	if Student.exists?(:slug => temp_slug)
   		self.slug = temp_slug + "2"
   	else
-  		self.sluf = temp_slug
+  		self.slug = temp_slug
   	end
   end
 
