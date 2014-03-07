@@ -72,13 +72,16 @@ describe StudentsController do
         :bio => "I am awesome",
         :slug => "thomas-surgent"
       }}
+      binding.pry
       expect(last_response.body).to include("Thomas Surgent")
     end
   end
 
   # This context should only be about testing the edit form.
   context 'GET /students/slug/edit' do
-    
+    it "should respond to GET /students/slug/edit" do
+      get '/students/:slug/edit'
+    end
   end
 
   context 'POST /students/slug' do
