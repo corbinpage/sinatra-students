@@ -31,7 +31,7 @@ RSpec.configure do |config|
 end
 
 def app
-  Rack::Builder.parse_file('config.ru').first
+  StudentsController.new
 end
 
 Capybara.app = app

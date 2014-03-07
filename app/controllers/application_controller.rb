@@ -9,8 +9,16 @@ class ApplicationController < Sinatra::Base
   # This will point all views to app/views, leaving you to specify
   # the controller subfolder and the view when rendering erb.
   # See the example in students_controller.rb, get '/'.
-  set :views, File.expand_path('../../views', __FILE__)
+ 
+  # set :session_secret, "my_application_secret"
   
+  # register Sinatra::ActiveRecordExtension
+  
+  # set :views, File.expand_path('../views', __FILE__)
+
+  enable :sessions
+  set :session_secret, "don't tell"
   register Sinatra::ActiveRecordExtension
-  set :session_secret, "my_application_secret"
+  set :views, Proc.new { File.join(root, "../views/") }
+
 end

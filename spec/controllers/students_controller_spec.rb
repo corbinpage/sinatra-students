@@ -2,6 +2,7 @@ require_relative '../spec_helper'
 
 describe StudentsController do
   # Every route should be within it's own context.
+
   context 'GET /' do
     # student will be a new, unsaved student.
     let(:student){Student.new.tap{|s| s.name = "Flatiron Student"}}
@@ -47,12 +48,32 @@ describe StudentsController do
   end
   
   context 'GET /students/new' do
+    it "should respond to /students/new" do
+      get '/students/new'
+      expect(last_response).to be_ok
+    end
   end
   
   context 'POST /students' do
+    it "should create a new student" do 
+      post '/students', {:student => {
+        :name => "Thomas",
+        :bio => "I am awesome"
+      }}
+      new_student = Student.find_by(name: "Thomas")
+      expect(new_student.bio).to eq("I am awesome")
+    end
   end
 
-  context 'GET /students/slug' do
+  context 'GET /students/:slug' do
+    it "should respond to /students/:slug" do
+      get '/students/:slug', {:student => {
+        :name => "Thomas Surgent",
+        :bio => "I am awesome",
+        :slug => "thomas-surgent"
+      }}
+      expect(last_response.body).to include("Thomas Surgent")
+    end
   end
 
   # This context should only be about testing the edit form.
