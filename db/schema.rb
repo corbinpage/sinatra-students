@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20140307184507) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
-
   end
 
 end
