@@ -12,13 +12,13 @@ class Student < ActiveRecord::Base
   	else
   		self.sluf = temp_slug
   	end
-
   end
 
   def change_name(name)
     self.name=name
     self.create_slug
   end
+
 
   def update_profile_pic_url
     profile_pic_base = "http://students.flatironschool.com"

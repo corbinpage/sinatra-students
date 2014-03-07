@@ -8,7 +8,7 @@
   <div><%= @student.work %></div>
   <div><%= @student.work_title %></div>
   <div><%= @student.education %></div>
-  <div><%= @student.created_at %></div>
-  <div><%= @student.updated_at %></div>
 
-  <h3>CHANGE</h3>
+<a href="/students/<%= @student.slug %>/edit">Edit</a><br/>
+
+<a href="/">Back to Students Page</a>
