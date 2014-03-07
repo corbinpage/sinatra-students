@@ -29,9 +29,10 @@ class StudentsController < ApplicationController
     erb :'students/show'
   end
 
-  # get '/students/avi-flombaum/edit' do
-  #   @student = Student.find_by(:slug => params[:slug])  
-  # end
+  get '/students/:slug/edit' do
+    @student = Student.find_by(:slug => params[:slug])  
+    erb :'students/edit'
+  end
 
 
   # GET '/students/new'
