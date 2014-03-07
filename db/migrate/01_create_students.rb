@@ -9,7 +9,10 @@ class CreateStudents < ActiveRecord::Migration
       t.string  :work
       t.string  :work_title
       t.string  :education
-
+      t.string  :twitter
+      t.string  :linkedin
+      t.string  :github
+      
       t.timestamps
     end
   end
