@@ -6,7 +6,13 @@ class Student < ActiveRecord::Base
 
 
   def create_slug
-    self.slug = self.name.downcase.gsub(" ","-").gsub("ä","a").gsub("ö","o").gsub("'","")
+    temp_slug = self.name.downcase.gsub(" ","-").gsub("ä","a").gsub("ö","o").gsub("'","")
+  	if Student.exists?(:slug => temp_slug)
+  		self.slug = temp_slug + "2"
+  	else
+  		self.sluf = temp_slug
+  	end
+
   end
 
   def change_name(name)
