@@ -2,6 +2,7 @@ require_relative '../spec_helper'
 
 describe StudentsController do
   # Every route should be within it's own context.
+
   context 'GET /' do
     # student will be a new, unsaved student.
     let(:student){Student.new.tap{|s| s.name = "Flatiron Student"}}
@@ -45,6 +46,7 @@ describe StudentsController do
       expect(last_response.body).to include(student.name)
     end
   end
+
   
   context 'GET /students/new' do
   end
