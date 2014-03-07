@@ -60,15 +60,20 @@ describe StudentsController do
         :name => "Thomas",
         :bio => "I am awesome"
       }}
-      expect(Student.find_by(name: "Thomas").bio).to .eq("I am awesome")
+      new_student = Student.find_by(name: "Thomas")
+      expect(new_student.bio).to eq("I am awesome")
     end
   end
 
   context 'GET /students/:slug' do
-    # it "should respond to /students/:slug" do
-    #   get '/students/:slug'
-    #   expect(last_response).to be_ok
-    # end
+    it "should respond to /students/:slug" do
+      get '/students/:slug', {:student => {
+        :name => "Thomas Surgent",
+        :bio => "I am awesome",
+        :slug => "thomas-surgent"
+      }}
+      expect(last_response.body).to include("Thomas Surgent")
+    end
   end
 
   # This context should only be about testing the edit form.

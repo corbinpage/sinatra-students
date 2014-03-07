@@ -15,6 +15,18 @@ class StudentsController < ApplicationController
     erb :'students/new'
   end
 
+  post '/students' do 
+    @student = Student.create(params[:student])
+
+    redirect to "/students/#{@student.slug}"
+  end
+
+  get "/students/:slug" do
+    @student = Student.find_by(params[:slug])
+    erb :'students/show'
+  end
+
+
   # GET '/students/new'
   # POST '/students'
   # GET '/students/avi-flombaum'
