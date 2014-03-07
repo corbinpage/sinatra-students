@@ -55,9 +55,20 @@ describe StudentsController do
   end
   
   context 'POST /students' do
+    it "should create a new student" do 
+      post '/students', {:student => {
+        :name => "Thomas",
+        :bio => "I am awesome"
+      }}
+      expect(Student.find_by(name: "Thomas").bio).to .eq("I am awesome")
+    end
   end
 
-  context 'GET /students/slug' do
+  context 'GET /students/:slug' do
+    # it "should respond to /students/:slug" do
+    #   get '/students/:slug'
+    #   expect(last_response).to be_ok
+    # end
   end
 
   # This context should only be about testing the edit form.

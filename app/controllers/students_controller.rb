@@ -6,15 +6,15 @@ class StudentsController < ApplicationController
     # Homepage action to display the student index.
     # Load all the students into an instance variable.
     # We use the ::all method on the Student class, provided by Sequel
-    #@students = Student.all
-    #erb :'students/index' # render the index.erb within app/views/students
-    "Hello World"
+    @students = Student.all
+    erb :'students/index' # render the index.erb within app/views/students
   end
 
   get '/students/new' do
 
-    "students new"
+    erb :'students/new'
   end
+
   # GET '/students/new'
   # POST '/students'
   # GET '/students/avi-flombaum'
